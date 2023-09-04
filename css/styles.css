@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /* THEME */
+    --primary: 282 44% 47%;
+    --bg-theme: #fff;
+    --secondary: 192 15% 94%;
+    --disable: 192 15% 94%;
+
+
+    /* TEXT */
+    --text-xs: 0.75rem;
+    --line-xs: 1rem;
+
+    --text-sm: 0.875rem;
+    --line-sm: 1.25rem;
+
+    --text-base: 1rem;
+    --line-base: 1.5rem;
+
+    --text-lg: 1.125rem;
+    --line-lg: 1.75rem;
+
+    --text-xl: 1.25rem;
+    --line-xl: 1.75rem;
+
+    --text-2xl: 1.5rem;
+    --line-2xl: 2rem;
+
+    --text-3xl: 1.875rem;
+    --line-3xl: 2.25rem;
+
+    --text-4xl: 2.25rem;
+    --line-4xl: 2.5rem;
+
+    --text-5xl: 3rem;
+
+    --text-6xl: 3.75rem;
+
+
+    /* SIZE */
+
+
+    /* BUTTONS */
+    --px: 1rem;
+    --py: 0.5rem;
+    --rounded: 0.35rem;
+
+}
+
+.toogle-theme:checked {
+    color-scheme: dark;
+    --bg-theme: #000;
+}
+
+body {
+    accent-color: hsl(var(--primary));
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* HEADINGS */
+h1 {
+    font-size: var(--text-6xl);
+}
+
+hr {
+
+    border: 1px solid hsl(var(--secondary));
+    width: 95%;
+    margin: auto;
+}
+
+h2 {
+    font-size: var(--text-5xl);
+}
+
+h3 {
+    font-size: var(--text-4xl);
+    line-height: var(--line-4xl);
+}
+
+h4 {
+    font-size: var(--text-3xl);
+    line-height: var(--line-3xl);
+}
+
+h5 {
+    font-size: var(--text-2xl);
+    line-height: var(--line-2xl);
+
+}
+
+h6 {
+    font-size: var(--text-xl);
+    line-height: var(--line-xl);
+}
+
+div {
+    background-color: var(--bg-theme);
+
+}
+
+
+input,
+select {
+    padding: var(--py) var(--px);
+    border: 1px solid hsl(var(--secondary));
+    outline: none;
+    border-radius: var(--rounded);
+    transition: 0.3s border ease-in-out;
+    position: relative;
+}
+
+input:focus {
+    border: 1px solid hsl(var(--primary));
+}
+
+button,
+input[type="button"],
+input[type="reset"] {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: hsl(var(--primary));
+    color: #fff;
+    border-radius: var(--rounded);
+    transition: 0.3s transform ease-in-out;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover {
+    transform: scale(1.03);
+}
+
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active {
+    transform: scale(0.95);
+}
+
+button:disabled,
+input:disabled {
+    cursor: not-allowed;
+}
+
+button:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled {
+    opacity: 0.7;
+    background-color: var(--disable);
+    color: #000;
+    transform: none;
+    border: 1px solid rgba(0 0 0/0.1);
+}
+
+table {
+    border-spacing: 0;
+    padding: 1rem;
+    text-align: start;
+    border: 1px solid hsl(var(--secondary));
+    border-radius: 0.7rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+table>thead th {}
+
+table>thead th:first-child {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+table>thead th:last-child {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+table>thead th {
+    background-color: hsl(var(--primary)/0.05);
+    text-align: start;
+    overflow: hidden;
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    padding: 0 var(--px);
+    user-select: none;
+    color: hsl(var(--primary)/ 0.6);
+}
+
+table tr,
+table th {
+    line-height: 3;
+}
+
+code {
+    background-color: hsl(var(--secondary));
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.3rem;
+    font-family: monospace;
+    font-size: var(--text-base);
+}
+
+
+
+
+
+input[type="file"] {
+    border: none;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
+input[type="file"]::before {
+    content: 'Selecionar archivos';
+    padding: 5px 15px;
+    background-color: hsl(var(--primary));
+    color: #fff;
+    border-radius: 2rem;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+    cursor: pointer;
+
+}
+
+
+
+
+@media (width<700px) {
+
+    button:hover,
+    input[type="button"]:hover,
+    input[type="reset"]:hover,
+    button:active,
+    input[type="button"]:active,
+    input[type="reset"]:active {
+        transform: none;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary)/0.4);
+    border-radius: 0.5rem;
+}
+
+::-moz-selection {
+    color: hsl(var(--primary));
+    background: hsl(var(--primary)/0.1);
+}
+
+::selection {
+    color: hsl(var(--primary));
+    background: hsl(var(--primary)/0.3);
+}
